@@ -3,9 +3,7 @@ import '../styles/post.css';
 import { MyButton } from "./UI/button/MyButton";
 
 export const PostItem = function (props) {
-    // console.log(props.fact);
     return (
-        // <div className='post'></div>
         <div className="post">
             <div className='post__content'>
                 <strong>{props.number}. {props.post.title}</strong>
