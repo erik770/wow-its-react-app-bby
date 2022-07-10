@@ -1,31 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PostsList } from './components/PostsList';
 import { PostForm } from './components/PostForm';
 import { PostFilter } from './components/PostFilter';
 import { MyModal } from './components/UI/MyModal/MyModal';
 import { MyButton } from './components/UI/button/MyButton';
 import { usePosts } from './hooks/usePosts';
+import { PostService } from './API/PostService';
 function App() {
   
-  const [posts, setPosts] = useState(
-    [
-      {
-        id: 1,
-        title: 'bbb',
-        body: 'a',
-      },
-      {
-        id: 2,
-        title: 'aaa',
-        body: 'c',
-      },
-      {
-        id: 3,
-        title: 'cc',
-        body: 'b',
-      },
-    ]
-  );
+  const [posts, setPosts] = useState([]);
+  const [isPostsLoading, setIsPostsLoading] = useState(true);
+
+  const getPosts = async function () {
+    setIsPostsLoading(true)
+    const posts = await PostService.GetAll();
+    setPosts(posts);
+    setIsPostsLoading(false);
+  } 
+  
+  useEffect(() => {
+    getPosts()
+  } , [])
+  
   const [filter, setFilter] = useState({ sort: '', search: '' });
   const [visibleCreatePost, setVisibilityCreatePost] = useState(false);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.search);
@@ -50,7 +46,10 @@ function App() {
         filter={filter}
         setFilter={setFilter}
       />
-      <PostsList removePost={removePost} posts={sortedAndSearchedPosts} title={'My blog'} />
+      {isPostsLoading
+        ? <h1> Loading.. </h1>
+        : <PostsList removePost={removePost} posts={sortedAndSearchedPosts} title={'My blog'} /> 
+      }
     </div>
   );
 }
