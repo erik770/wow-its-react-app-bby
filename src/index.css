@@ -7,8 +7,12 @@
 #root {
   display:flex;
   justify-content: center;
+  background-color: rgb(244, 251, 246);
 }
 
 .App {
-  width: 800px;
+  width: 900px;
+  padding: 0 30px;
+  /* box-sizing: border-box; */
+  background-color:rgb(250, 254, 248);
 }
