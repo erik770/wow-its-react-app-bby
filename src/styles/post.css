@@ -11,9 +11,11 @@
 
 .post-enter {
     transform: translateX(-550px);
+    opacity: 0;
 }
 
 .post-enter-active {
+    opacity: 1;
     transform: translateX(0px);
     transition: all 300ms ease-in;
 }
@@ -24,5 +26,6 @@
 
 .post-exit-active {
     transform: translateX(-550px);
+    opacity: 0;
     transition: all 300ms ease-in;
 }
