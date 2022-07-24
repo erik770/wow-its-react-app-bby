@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './MyError.module.css';
+import classes from './MyError.module.scss';
 import {Link} from "react-router-dom";
 
 const MyError = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Navbar.module.css';
+import classes from './Navbar.module.scss';
 import {Link} from "react-router-dom";
 import Posts from "../../../pages/Posts";
 import About from "../../../pages/About";
