@@ -1,43 +1,43 @@
-.trapezoid {
+.navbar {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+
+  &__trapezoid {
     box-sizing: content-box;
     height: 0;
-    border: 80px solid rgba(0,0,0,0);
+    border: 80px solid rgba(0, 0, 0, 0);
     border-top: 0 solid;
-    border-bottom: 50px solid rgba(1, 1, 1, .4);
+    border-bottom: 50px solid var(--background-color-green);
     border-radius: 20px 20px 0 0;
-    font: normal 100%/normal Arial, Helvetica, sans-serif;
-    color: rgba(0,0,0,0.7);
+    font: var(--navbar-font);
     text-overflow: clip;
     transform: rotateX(180deg);
     width: 700px;
     position: relative;
     transition: all 0.7s ease;
-    padding-left:7%;
-}
+    padding-left: 7%;
+  }
 
-.navbar {
-    display:flex;
-    overflow:hidden;
-    justify-content: center;
-    height: 50px;
+  &__item {
+    transform: rotateX(180deg);
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    display: flex;
+    padding: 16px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: all 0.5s ease;
 
-    &__item {
-        transform: rotateX(180deg);
-        float: left;
-        font-size: 16px;
-        color: white;
-        text-align: center;
-        display: flex;
-        padding: 16px 25px;
-        text-decoration: none   ;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        transition: all 0.5s ease;
+    &:hover {
+      background: #589d76;
+      color: black;
+      border-radius: 10px;
     }
-
-    & a:hover {
-        background:#8CA6DB;
-        color: black;
-        border-radius:5px;
-    }
+  }
 }

@@ -1,0 +1,22 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  background: var(--background-color-semitransp);
+
+  &__content {
+    padding: 40px;
+    min-width: 300px;
+    background: white;
+    border-radius: 20px;
+  }
+
+  &_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
