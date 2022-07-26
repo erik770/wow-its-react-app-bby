@@ -10,6 +10,7 @@ import {PostService} from '../API/PostService';
 import {useFetching} from '../hooks/useFetching';
 import {getPagesCount} from "../utils/pages";
 import {Pagination} from "../components/UI/pagination/Pagination";
+import {MySelect} from "../components/UI/select/MySelect";
 
 function Pages() {
 
@@ -26,7 +27,7 @@ function Pages() {
 
   useEffect(() => {
     fetchPosts()
-  }, [page])
+  }, [page, limit])
 
   const [filter, setFilter] = useState({sort: '', search: ''});
   const [visibleCreatePost, setVisibilityCreatePost] = useState(false);
@@ -55,6 +56,17 @@ function Pages() {
       <PostFilter
         filter={filter}
         setFilter={setFilter}
+      />
+      <MySelect
+        value={limit}
+        onChange={(value) => setLimit(value)}
+        defaultValue='Кол-во постов'
+        options={[
+          {value: 5, name: '5'},
+          {value: 10, name: '10'},
+          {value: 25, name: '25'},
+          {value: -1, name: 'Все'},
+        ]}
       />
       {postError &&
         <h1>Error:{postError}</h1>

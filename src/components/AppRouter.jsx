@@ -5,7 +5,7 @@ import {ROUTES} from '../consts/routes'
 const AppRouter = () => {
   return (
     <Routes>
-      {ROUTES.map(route => <Route path={route.path} element={<route.component />}/> )}
+      {ROUTES.map(route => <Route key={route.path} path={route.path} element={<route.component />}/> )}
     </Routes>
   );
 };

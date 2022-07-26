@@ -44,7 +44,8 @@ const SinglePost = () => {
           <div className="comments-container">
             {comments.map((comment, index) => <CommentItem author={comment.email}
                                                            title={comment.name}
-                                                           body={comment.body}/>)}
+                                                           body={comment.body}
+                                                           key={comment.id}/>)}
           </div>
         )
       }
