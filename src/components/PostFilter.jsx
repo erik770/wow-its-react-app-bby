@@ -11,10 +11,10 @@ export const PostFilter = function({filter, setFilter}) {
                 onChange={(event) => setFilter({ ...filter, search: event.target.value })}
             />
             <MySelect
-                defaultValue={'Сортировка'}
+                defaultValue={'Sort by'}
                 options={[
-                    { value: 'title', name: 'По названию' },
-                    { value: 'body', name: 'По описанию' },
+                    { value: 'title', name: 'Title' },
+                    { value: 'body', name: 'Description' },
                 ]}
                 value={filter.sort}
                 onChange={(selectedSort) => setFilter({...filter, sort: selectedSort})}

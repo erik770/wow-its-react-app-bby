@@ -1,43 +1,32 @@
 .navbar {
   display: flex;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
   height: 50px;
+  width: 100%;
+  background: var(--background-color-green);
 
-  &__trapezoid {
-    box-sizing: content-box;
-    height: 0;
-    border: 80px solid rgba(0, 0, 0, 0);
-    border-top: 0 solid;
-    border-bottom: 50px solid var(--background-color-green);
-    border-radius: 20px 20px 0 0;
-    font: var(--navbar-font);
-    text-overflow: clip;
-    transform: rotateX(180deg);
-    width: 700px;
-    position: relative;
-    transition: all 0.7s ease;
-    padding-left: 7%;
+  &__items {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    list-style: none;
   }
-
   &__item {
-    transform: rotateX(180deg);
-    float: left;
+    flex: 1 1 100%;
     font-size: 16px;
     color: white;
     text-align: center;
-    display: flex;
-    padding: 16px 25px;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 4px;
     transition: all 0.5s ease;
+    padding: 15px 40px;
 
     &:hover {
       background: #589d76;
       color: black;
-      border-radius: 10px;
     }
+
   }
 }

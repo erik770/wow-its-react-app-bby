@@ -10,4 +10,8 @@
     --border-color: seagreen;
 
     --navbar-font: normal 100%/normal Arial, Helvetica, sans-serif;
+
+    --select-border: var(--border-color);
+    --select-focus: var(--btn-border-color);
+    --select-arrow: var(--select-border);
 }
