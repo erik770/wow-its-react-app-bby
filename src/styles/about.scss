@@ -1,0 +1,44 @@
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: var(--background-color-green);
+  margin: auto;
+  flex-grow: 3;
+  max-width: 700px;
+
+  &__icon {
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+  }
+
+  &__text {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    padding: 0 20px;
+
+    & a {
+      color: white;
+
+      &:hover {
+        text-decoration: none
+      }
+    }
+  }
+}

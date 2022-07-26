@@ -3,17 +3,6 @@ import classes from './MyError.module.scss';
 import {Link} from "react-router-dom";
 
 const MyError = () => {
-  useEffect(() => {
-    const scriptTag = document.createElement('script');
-
-    scriptTag.src = "https://kit.fontawesome.com/4b9ba14b0f.js";
-    scriptTag.async = true;
-
-    document.body.appendChild(scriptTag);
-    return () => {
-      document.body.removeChild(scriptTag);
-    }
-  }, []);
 
   return (
     <div className={classes['error-wrapper']}>
