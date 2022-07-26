@@ -15,4 +15,9 @@ export class PostService {
     const resp = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
     return resp;
   }
+
+  static async GetComments(id) {
+    const resp = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
+    return resp;
+  }
 }
